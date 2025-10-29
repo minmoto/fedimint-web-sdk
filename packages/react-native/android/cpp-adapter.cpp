@@ -2,7 +2,7 @@
 #include <jni.h>
 #include <jsi/jsi.h>
 #include <ReactCommon/CallInvokerHolder.h>
-#include "fedimint-react-native.h"
+#include "minmoto-react-native.h"
 
 namespace jsi = facebook::jsi;
 namespace react = facebook::react;
@@ -63,11 +63,11 @@ Java_com_fedimint_reactnative_ReactNativeModule_nativeSetCallInvoker(
     env->DeleteLocalRef(hybridDataClass);
 }
 
-// Automated testing checks Java_com_fedimint_reactnative_ReactNativeModule and fedimint_reactnative
+// Automated testing checks Java_com_fedimint_reactnative_ReactNativeModule and minmoto_reactnative
 // by comparing the whole line here.
 /*
 Java_com_fedimint_reactnative_ReactNativeModule_nativeMultiply(JNIEnv *env, jclass type, jdouble a, jdouble b) {
-    return fedimint_reactnative::multiply(a, b);
+    return minmoto_reactnative::multiply(a, b);
 }
 */
 
@@ -84,12 +84,12 @@ Java_com_fedimint_reactnative_ReactNativeModule_nativeInstallRustCrate(
     }
     
     auto runtime = reinterpret_cast<jsi::Runtime *>(rtPtr);
-    return fedimint_reactnative::installRustCrate(*runtime, g_callInvoker);
+    return minmoto_reactnative::installRustCrate(*runtime, g_callInvoker);
 }
 
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_fedimint_reactnative_ReactNativeModule_nativeCleanupRustCrate(JNIEnv *env, jclass type, jlong rtPtr) {
     auto runtime = reinterpret_cast<jsi::Runtime *>(rtPtr);
-    return fedimint_reactnative::cleanupRustCrate(*runtime);
+    return minmoto_reactnative::cleanupRustCrate(*runtime);
 }

@@ -24,7 +24,7 @@ class ReactNativeModule(reactContext: ReactApplicationContext) :
   }
 
   // Two native methods implemented in cpp-adapter.cpp, and ultimately
-  // fedimint-react-native.cpp
+  // minmoto-react-native.cpp
 
   external fun nativeSetCallInvoker(callInvokerHolder: Any)
   external fun nativeInstallRustCrate(runtimePointer: Long): Boolean
@@ -47,7 +47,7 @@ class ReactNativeModule(reactContext: ReactApplicationContext) :
     const val NAME = "ReactNative"
 
     init {
-      System.loadLibrary("fedimint-react-native")
+      System.loadLibrary("minmoto-react-native")
     }
   }
 }
