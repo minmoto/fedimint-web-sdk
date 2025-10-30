@@ -7,3 +7,9 @@ noOverwrite:
   - '*.podspec'
   - 'android/cpp-adapter.cpp'
   - 'android/src/main/java/com/fedimint/reactnative/ReactNativeModule.kt'
+android:
+  targets:
+    - arm64-v8a
+ios:
+  targets:
+    - aarch64-apple-ios-sim
