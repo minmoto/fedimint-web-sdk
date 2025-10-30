@@ -33,6 +33,7 @@ jobs:
       - name: Configure npm for publishing
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "done"
 
       - name: Get pnpm store directory
         shell: bash
